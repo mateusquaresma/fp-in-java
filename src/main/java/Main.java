@@ -4,7 +4,7 @@ public class Main {
 
         Function<Integer, Integer> square = arg -> arg * arg;
 
-        System.out.println(compose(triple, square).apply(3));
+        System.out.println(Function.compose(triple, square).apply(3));
 
         Function<Integer, Function<Integer, Integer>> add = x -> y -> x + y;
         System.out.println(add.apply(3).apply(5));
@@ -35,8 +35,5 @@ public class Main {
 //            Function<Function<R, A>,
 //                    Function<R, B>>> polyCompose = x -> y -> z -> x.apply(y.apply(z));
 
-    static Function<Integer, Integer> compose(final Function<Integer, Integer> f1,
-                                              final Function<Integer, Integer> f2) {
-        return arg -> f1.apply(f2.apply(arg));
-    }
+
 }
